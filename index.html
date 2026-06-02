@@ -10,12 +10,9 @@
     <title>Татарская Ассоциация</title>
     <meta name="description" content="Гражданская платформа для консолидации татарского народа, сохранения культурно-языкового наследия и развития Волго-Уральского макрорегиона.">
     
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://neotatarism.github.io/">
-    <meta property="og:title" content="Татарская Ассоциация">
-    <meta property="og:description" content="Гражданская платформа для консолидации татарского народа, сохранения культурно-языкового наследия и развития Волго-Уральского макрорегиона.">
-
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
         :root {
             --bg-color: #0d0d0f;
             --panel-bg: #141417;
@@ -31,7 +28,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             -webkit-tap-highlight-color: transparent;
         }
 
@@ -138,9 +135,6 @@
             -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             transform-style: preserve-3d;
             -webkit-transform-style: preserve-3d;
-            transform: translate3d(0, 0, 0);
-            -webkit-transform: translate3d(0, 0, 0);
-            will-change: transform;
         }
 
         .flag-flip-container.flipped .flag-flipper {
@@ -156,8 +150,6 @@
             height: 100%;
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
-            transform: rotateX(0deg); 
-            -webkit-transform: rotateX(0deg);
             border-radius: 6px;
             border: 1px solid var(--border);
             overflow: hidden;
@@ -223,6 +215,34 @@
             border-radius: 0 8px 8px 0;
         }
 
+        /* Новые стили для открытых блоков */
+        .content-card {
+            margin-bottom: 24px;
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background-color: var(--panel-bg);
+        }
+
+        .content-card h3 {
+            font-size: 1.2rem;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .content-card p {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: var(--text-body);
+        }
+
+        .content-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Стили для спойлеров */
         .spoiler-item {
             margin-bottom: 8px;
             border: 1px solid var(--border);
@@ -272,10 +292,6 @@
             padding: 0 20px 20px 20px;
             color: var(--text-body);
             font-size: 0.95rem;
-        }
-
-        .spoiler-content p {
-            margin-bottom: 12px;
         }
 
         .custom-list {
@@ -603,44 +619,42 @@
             Гражданская платформа для консолидации татарского народа, сохранения культурно-языкового наследия и развития Волго-Уральского макрорегиона.
         </div>
 
-        <div class="spoiler-item">
-            <button class="spoiler-btn" data-t="btnContext">Контекст</button>
-            <div class="spoiler-content">
-                <p data-t="ctx1">Татарская культура сегодня находится под давлением с двух сторон: с одной — размывание и ассимиляция, с другой — консервация и превращение в фольклор. Ни то ни другое не даёт народу будущего.</p>
-                <p data-t="ctx2">Молодое поколение теряет связь с идентичностью не потому, что она ему неинтересна — а потому что ей не предлагают современного языка и живого сообщества.</p>
-                <p data-t="ctx3">Татарская Ассоциация создана именно для этого: стать точкой сборки для тех, кто готов строить, а не только помнить. Мы формируем пространство, где историческое наследие соединяется with прагматичным взглядом в будущее.</p>
-            </div>
+        <!-- Открытый блок Контекст -->
+        <div class="content-card">
+            <h3 data-t="btnContext">Контекст</h3>
+            <p data-t="ctx1">Татарская культура сегодня находится под давлением с двух сторон: с одной — размывание и ассимиляция, с другой — консервация и превращение в фольклор. Ни то ни другое не даёт народу будущего.</p>
+            <p data-t="ctx2">Молодое поколение теряет связь с идентичностью не потому, что она ему неинтересна — а потому что ей не предлагают современного языка и живого сообщества.</p>
+            <p data-t="ctx3">Татарская Ассоциация создана именно для этого: стать точкой сборки для тех, кто готов строить, а не только помнить. Мы формируем пространство, где историческое наследие соединяется с прагматичным взглядом в будущее.</p>
         </div>
 
-        <div class="spoiler-item">
-            <button class="spoiler-btn" data-t="btnIdeas">Основные идеи</button>
-            <div class="spoiler-content">
-                <ul class="custom-list">
-                    <li data-t="idea1"><strong>Единство в многообразии.</strong> Татарский народ исторически складывается из нескольких крупных ветвей. Мы не стираем различия между ними, а видим в них три опоры одного живого татарского мира.</li>
-                    <li data-t="idea2"><strong>Регион — наш приоритет.</strong> Татарстан и весь Волго-Уральский макрорегион — это единое пространство нашего развития. Реальная сила строится снизу вверх: нас интересуют конкретные дела и локальные инициативы.</li>
-                    <li data-t="idea3"><strong>Гражданское единство.</strong> Вера — личный выбор каждого. Светские и религиозные участники абсолютно равны.</li>
-                    <li data-t="idea4"><strong>Живая культура.</strong> Традиция должна развиваться, а не храниться под стеклом.</li>
-                    <li data-t="idea5"><strong>Созидание и легальность.</strong> Интеллект, образование, дисциплина и строгое соблюдение законов — наш единственный инструмент.</li>
-                </ul>
-            </div>
+        <!-- Открытый блок Основные идеи -->
+        <div class="content-card">
+            <h3 data-t="btnIdeas">Основные идеи</h3>
+            <ul class="custom-list">
+                <li data-t="idea1"><strong>Единство в многообразии.</strong> Татарский народ исторически складывается из нескольких крупных ветвей. Мы не стираем различия между ними, а видим в них три опоры одного живого татарского мира.</li>
+                <li data-t="idea2"><strong>Регион — наш приоритет.</strong> Татарстан и весь Волго-Уральский макрорегион — это единое пространство нашего развития. Реальная сила строится снизу вверх: нас интересуют конкретные дела и локальные инициативы.</li>
+                <li data-t="idea3"><strong>Гражданское единство.</strong> Вера — личный выбор каждого. Светские и религиозные участники абсолютно равны.</li>
+                <li data-t="idea4"><strong>Живая культура.</strong> Традиция должна развиваться, а не храниться под стеклом.</li>
+                <li data-t="idea5"><strong>Созидание и легальность.</strong> Интеллект, образование, дисциплина и строгое соблюдение законов — наш единственный инструмент.</li>
+            </ul>
         </div>
 
-        <div class="spoiler-item">
-            <button class="spoiler-btn" data-t="btnNeo">Неотатаризм</button>
-            <div class="spoiler-content">
-                <p data-t="neo1"><strong>Неотатаризм — идеологический фундамент Ассоциации.</strong></p>
-                <p data-t="neo2">Большинство локальных культур сегодня оказались перед выбором: раствориться в глобальном потоке или уйти в архаику. Оба пути ведут в тупик.</p>
-                <p data-t="neo3">Неотатаризм — это третий путь. Культура как живая среда, способная развиваться и давать человеку реальную опору. Четыре наши опоры:</p>
-                <ul style="list-style: disc; margin-left: 20px; margin-bottom: 15px; padding-left: 5px;">
-                    <li data-t="neoL1"><strong>Историческая грамотность</strong> — трезвый взгляд на прошлое</li>
-                    <li data-t="neoL2"><strong>Личное развитие</strong> — образование, дисциплина</li>
-                    <li data-t="neoL3"><strong>Прагматизм</strong> — конкретные решения</li>
-                    <li data-t="neoL4"><strong>Солидарность</strong> — взаимная поддержка</li>
-                </ul>
-                <p data-t="neo4">Неотатаризм не отвечает на вопрос «кем были наши предки». Он отвечает на вопрос <strong>«кем мы хотим быть»</strong>.</p>
-            </div>
+        <!-- Открытый блок Неотатаризм -->
+        <div class="content-card">
+            <h3 data-t="btnNeo">Неотатаризм</h3>
+            <p data-t="neo1"><strong>Неотатаризм — идеологический фундамент Ассоциации.</strong></p>
+            <p data-t="neo2">Большинство локальных культур сегодня оказались перед выбором: раствориться в глобальном потоке или уйти в архаику. Оба пути ведут в тупик.</p>
+            <p data-t="neo3">Неотатаризм — это третий путь. Культура как живая среда, способная развиваться и давать человеку реальную опору. Четыре наши опоры:</p>
+            <ul style="list-style: disc; margin-left: 20px; margin-bottom: 15px; padding-left: 5px; color: var(--text-body);">
+                <li data-t="neoL1"><strong>Историческая грамотность</strong> — трезвый взгляд на прошлое</li>
+                <li data-t="neoL2"><strong>Личное развитие</strong> — образование, дисциплина</li>
+                <li data-t="neoL3"><strong>Прагматизм</strong> — конкретные решения</li>
+                <li data-t="neoL4"><strong>Солидарность</strong> — взаимная поддержка</li>
+            </ul>
+            <p data-t="neo4">Неотатаризм не отвечает на вопрос «кем были наши предки». Он отвечает на вопрос <strong>«кем мы хотим быть»</strong>.</p>
         </div>
 
+        <!-- Оставшиеся блоки в спойлерах (доп. инфо) -->
         <div class="spoiler-item">
             <button class="spoiler-btn" data-t="btnPortrait">Портрет участника</button>
             <div class="spoiler-content">
@@ -690,13 +704,13 @@
         </div>
 
         <div class="spoiler-item">
-            <button class="spoiler-btn" data-t="btnProj">Проекты</button>
+            <button class="spoiler-btn" data-t="btnProj">Проекты и направления</button>
             <div class="spoiler-content">
-                <p data-t="projText">Ассоциация находится на стадии формирования. Планируется запуск площадок для координации сообщества:</p>
+                <p data-t="projText">Ассоциация фокусируется на реальных делах. Наши ключевые направления:</p>
                 <ul class="projects-list">
-                    <li>📢 <strong>Telegram-канал</strong> — <span data-t="proj1">главная трибуна: аналитика и концептуальные материалы</span></li>
-                    <li>💬 <strong>Telegram-чат</strong> — <span data-t="proj2">ядро сообщества: живое общение и нетворкинг</span></li>
-                    <li>📱 <strong>TikTok / YouTube</strong> — <span data-t="proj3">визуальный авангард: эстетика и популяризация смыслов</span></li>
+                    <li>📢 <strong>Медиа и смыслы</strong> — <span data-t="proj1">создание качественного контента: аналитика, популяризация культуры в TikTok/YouTube, статьи</span></li>
+                    <li>💬 <strong>Локальный нетворкинг</strong> — <span data-t="proj2">объединение профессионалов и бизнесменов для взаимопомощи и запуска совместных проектов</span></li>
+                    <li>📱 <strong>Просвещение</strong> — <span data-t="proj3">поддержка образовательных инициатив, лектории и языковые клубы нового формата</span></li>
                 </ul>
             </div>
         </div>
@@ -787,8 +801,8 @@
 </div>
 
 <script>
-    // ВСТАВЛЕН ТВОЙ API КЛЮЧ ОТ IMGBB
-    const IMGBB_API_KEY = 'ee9716e21795694a65aaafae60475185';
+    // ВАЖНО: API Ключ удален из фронтенда для безопасности.
+    // Теперь отправка идет как FormData напрямую в Pipedream.
 
     document.querySelectorAll('.spoiler-btn').forEach(button => {
         button.addEventListener('click', () => {
@@ -864,11 +878,11 @@
             tdDevDesc: "Личностный рост каждого участника — образование, спорт, дисциплина",
             tdIden: "<strong>Идентичность</strong>",
             tdIdenDesc: "Надрелигиозный союз на основе общей истории, культуры и языка",
-            btnProj: "Проекты",
-            projText: "Ассоциация находится на стадии формирования. Планируется запуск площадок для координации сообщества:",
-            proj1: "главная трибуна: аналитика и концептуальные материалы",
-            proj2: "ядро сообщества: живое общение и нетворкинг",
-            proj3: "визуальный авангард: эстетика и популяризация смыслов",
+            btnProj: "Проекты и направления",
+            projText: "Ассоциация фокусируется на реальных делах. Наши ключевые направления:",
+            proj1: "создание качественного контента: аналитика, популяризация культуры в TikTok/YouTube, статьи",
+            proj2: "объединение профессионалов и бизнесменов для взаимопомощи и запуска совместных проектов",
+            proj3: "поддержка образовательных инициатив, лектории и языковые клубы нового формата",
             infoTitle: "Татарская Ассоциация",
             lblType: "Тип",
             valType: "Гражданская платформа",
@@ -944,11 +958,11 @@
             tdDevDesc: "Personal growth of each participant — education, sports",
             tdIden: "<strong>Identity</strong>",
             tdIdenDesc: "Supra-religious union based on common history and language",
-            btnProj: "Projects",
-            projText: "The Association is in its formative stage. We plan to launch:",
-            proj1: "main tribune: analytics and conceptual materials",
-            proj2: "community core: live communication and networking",
-            proj3: "visual vanguard: aesthetics and media",
+            btnProj: "Projects & Directions",
+            projText: "The Association focuses on real deeds. Our key directions:",
+            proj1: "creating quality content: analytics, culture popularization on TikTok/YouTube, articles",
+            proj2: "uniting professionals and businessmen for mutual aid and launching joint projects",
+            proj3: "supporting educational initiatives, modern lecture halls, and language clubs",
             infoTitle: "Tatar Association",
             lblType: "Type",
             valType: "Civic Platform",
@@ -996,7 +1010,7 @@
             glosTerm2: "Неотатаризм",
             glosDef2: "Фольклорга гына түгел, ә прагматизмга, иҗатка һәм рель эшләргә таянып кемлекне яңарту концепциясе.",
             glosTerm3: "Горизонталь элемтәләр",
-            glosDef3: "Катнашучыларның тигез хокуклы, катгый вертикаль иерархиясез һәм бюрократиясез үзара эш итү系统.",
+            glosDef3: "Катнашучыларның тигез хокуклы, катгый вертикаль иерархиясез һәм бюрократиясез үзара эш итү системасы.",
             btnNeo: "Неотатаризм",
             neo1: "<strong>Неотатаризм — Ассоциациянең идеологик нигезе.</strong>",
             neo2: "Күпчелек җирле мәдәниятләр бүген сайлау алдында калды: глобаль агымда эреп югалу яки архаикага китү. Ике юл да турыкка илтә.",
@@ -1024,16 +1038,16 @@
             tdDevDesc: "Һәр катнашучының шәхси үсеше — белем, спорт, тәртип",
             tdIden: "<strong>Кемлек</strong>",
             tdIdenDesc: "Уртак тарих һәм тел нигезендә дин өсте берлеге",
-            btnProj: "Проектлар",
-            projText: "Ассоциация формалашу чорында. Җәмгыятьне координацияләү өчен мәйданчыклар эшләтеп җибәрү планлаштырыла:",
-            proj1: "төп трибуна: аналитика һәм концептуаль материаллар",
-            proj2: "җәмгыять үзәге: тере аралашу һәм нетворкинг",
-            proj3: "визуаль авангард: эстетика һәм мәгънәләрне популярлаштыру",
-            infoTitle: "Татарская Ассоциациясе",
+            btnProj: "Проектлар һәм юнәлешләр",
+            projText: "Ассоциация реаль эшләргә игътибар итә. Төп юнәлешләребез:",
+            proj1: "сыйфатлы контент ясау: аналитика, мәдәниятне популярлаштыру, мәкаләләр",
+            proj2: "бер-береңә ярдәм итү һәм уртак проектлар башлау өчен белгечләрне берләштерү",
+            proj3: "мәгариф башлангычларын, лекторийларны һәм яңа форматтагы тел клубларын хуплау",
+            infoTitle: "Татар Ассоциациясе",
             lblType: "Төре",
             valType: "Гражданнар мәйданчыгы",
             lblBase: "Нигез",
-            valBase: "Үз-үзеңне оештыру,прагматизм",
+            valBase: "Үз-үзеңне оештыру, прагматизм",
             lblGoal: "Максат",
             valGoal: "Макротөбәкне үстерү",
             lblConcept: "Концепция",
@@ -1117,7 +1131,7 @@
     fFiles.addEventListener('change', function() {
         if (this.files.length > 5) {
             fileError.style.display = 'block';
-            this.value = ''; // Сбрасываем выбранные файлы
+            this.value = ''; 
         } else {
             fileError.style.display = 'none';
         }
@@ -1128,7 +1142,6 @@
         modalOverlay.classList.add('active');
         document.body.style.overflow = 'hidden'; 
         
-        // Сброс состояния
         modalForm.style.display = 'block';
         modalForm.style.opacity = '1';
         modalSuccess.style.display = 'none';
@@ -1162,7 +1175,7 @@
     fNick.addEventListener('input', () => fNick.classList.remove('error'));
     fIdea.addEventListener('input', () => fIdea.classList.remove('error'));
 
-    // Логика отправки данных и картинок
+    // Логика отправки данных (теперь всё отправляется как FormData напрямую на Pipedream)
     submitFeedbackBtn.addEventListener('click', async () => {
         const nickVal = fNick.value.trim();
         const ideaVal = fIdea.value.trim();
@@ -1187,48 +1200,28 @@
             const originalText = submitFeedbackBtn.innerHTML;
             const currentLang = localStorage.getItem('selectedLanguage') || 'ru';
             
-            submitFeedbackBtn.innerHTML = 'Обработка...'; 
+            submitFeedbackBtn.innerHTML = 'Отправка...'; 
             submitFeedbackBtn.style.opacity = '0.7';
             submitFeedbackBtn.style.pointerEvents = 'none';
 
-            let imageUrls = [];
-            const files = fFiles.files;
-
             try {
-                // Если есть файлы, загружаем их на ImgBB
-                if (files.length > 0) {
-                    submitFeedbackBtn.innerHTML = 'Загрузка фото...';
-                    
-                    for (let i = 0; i < files.length; i++) {
-                        const formData = new FormData();
-                        formData.append('image', files[i]);
+                // Создаем объект FormData для отправки файлов и текста вместе
+                const formData = new FormData();
+                formData.append('nickname', nickVal);
+                formData.append('suggestion', ideaVal);
+                formData.append('language', currentLang);
 
-                        const response = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
-                            method: 'POST',
-                            body: formData
-                        });
-                        const data = await response.json();
-                        
-                        if (data.success) {
-                            imageUrls.push(data.data.url); 
-                        }
+                // Добавляем все файлы
+                if (fFiles.files.length > 0) {
+                    for (let i = 0; i < fFiles.files.length; i++) {
+                        formData.append('images', fFiles.files[i]);
                     }
                 }
 
-                submitFeedbackBtn.innerHTML = 'Отправка...';
-
-                // Отправка данных на Pipedream (теперь images — это чистый массив)
+                // Отправляем все разом на Pipedream
                 await fetch('https://eoave29dn83oce.m.pipedream.net', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        nickname: nickVal,
-                        suggestion: ideaVal,
-                        language: currentLang,
-                        images: imageUrls // Передаем структуру массивом для создания альбома
-                    })
+                    body: formData // ВАЖНО: Content-Type установится автоматически как multipart/form-data
                 });
 
                 // Успешный финал
@@ -1251,4 +1244,4 @@
 </script>
 
 </body>
-                </html>
+</html>
